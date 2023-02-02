@@ -1,0 +1,25 @@
+#items {
+
+    background-color: rgb(203, 108, 74);
+    text-align: center;
+    
+
+    .item1{
+        color: rgb(31, 174, 174);
+
+        &:hover{
+            color: darkorange;
+        }
+    }
+    .item2 {
+        color: rgb(255, 255, 255);
+
+        &:hover {
+            color: rgb(203, 7, 7);
+        }
+    }
+    
+}
+body {
+    background-color: beige;
+}

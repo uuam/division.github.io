@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+.title {
+    background-color: rgb(56, 133, 216);
+    padding: .5rem 0;
+    display: block;
+    text-align: center;
+}
+h1 {
+    font-size: 1.5rem;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.btn {
+    background-color: #fff;
+}
+.btn:hover {
+    color: #fff;
+    background-color: chocolate;
+    transition:ease-in-out .2s;
+}
+input {
+    font-family: 'Kosugi Maru', sans-serif;
+}

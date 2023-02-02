@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/item.css">
+    <title>JavaScript:AJAX 網路連線實務</title>
+</head>
+
+<body>
+    <h3 style="margin:0 auto;display: block;text-align: center;">AJAX / XHR 網路連線實務</h3>
+    <button onclick="getData()" style="margin:2rem auto;display: block;text-align: center;padding: 1rem;border-radius:1rem;border: 0;background-color: burlywood;color: white;cursor: pointer;">連線取得資料</button>
+    <div id="result" style="margin:0 auto;display: block;text-align: center;"></div>
+    <!-- <section>
+        <button style="display: block;margin: 0 auto;" onclick="change()">change</button>
+        <div id="div" style="margin: 10px auto;text-align: center;">今天是個<span id="weather">好</span>天氣</div>
+        <div id="items">
+            <div class="item1">這不是紅色</div>
+            <div class="item2">這是紅色</div>
+        </div>
+    </section> -->
+    <script>
+        function getData() {
+            // 利用fetch進行連線並取得資料
+            fetch('https://cwpeng.github.io/live-records-samples/data/products.json').then(function(response){
+                return response.json()
+            }).then(function(data){
+                // 已經取得資料，把資料呈現到畫面上
+                let result = document.querySelector('#result')
+                result.innerHTML = ''; //每次都先清空，就不會重複出現接在後面。
+                for(let i = 0 ; i < data.length ; i++){
+                    let product = data[i];
+                    result.innerHTML += `<div> ${i+1}.  品名：${product.name} | 價格：${product.price} | ${product.description}`
+                }
+            })
+        }
+
+
+        // https://cwpeng.github.io/live-records-samples/data/products.json
+
+        // function change() {
+        //     const weather = document.getElementById('weather')
+        //     // document.getElementById('div').innerHTML = "Hello World";
+        //     weather.innerHTML = "壞";
+        // }
+    </script>
+</body>
+
+</html>

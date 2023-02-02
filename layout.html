@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 控制網頁的縮放 -->
+    <title>Flexbox 網頁切版</title>
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h1> 除法計算機</h1>
+        </div>
+    </header>
+    <div style="display:block;padding: 3rem 0;background-color: rgb(255, 208, 0);">
+        <form>
+            <label style="color: #fff;margin: auto;">
+                <div style="display: flex;margin:0 auto;justify-content: center;align-items: center;">
+                    <input type="text" id="num1" style="text-align: center;font-size: 1.3rem;width: 100px;">
+                    <span style="font-size: 2rem;margin: 0 5px;">÷</span>
+                    <input value="" type="text" id="num2" style="text-align: center;font-size: 1.3rem;width: 100px;">
+                    <span style="font-size: 2rem;margin: 0 5px;">=</span>
+                    <div
+                        style="display: flex;align-items: center;color: black;background-color: #fff;width: 100px;height: 30px;">
+                        <p id="result"
+                            style="display: block;font-size: 1.3rem;margin:auto;margin-block-start: 0;margin-block-end: 0;margin-inline-start: auto;text-align: center;margin-inline-end: auto;">
+                        </p>
+                    </div>
+                </div>
+                <div style="display: block; margin: auto;text-align: center;">
+                    <input type="submit" id="btn" class="btn" value="計算"
+                        style="display: inline-block;margin: 1rem;font-size: 1rem;padding: .5rem 1.5rem;border-radius: 1rem;border: 0;cursor: pointer;">
+                    <input type="reset" class="btn" id="resetBtn"
+                        style="display: inline-block;margin: 1rem;font-size: 1rem;padding: .5rem 1.5rem;border-radius: 1rem;border: 0;cursor: pointer;">
+                </div>
+                <!-- <div
+                    style="font-size: 1rem;display: block;margin: 0 auto;color: #000;text-align: center;background-color: rgb(255, 255, 255);">
+                    <p style="display:inline-block;">結果：</p>
+                    <p id="result" style="display: inline-block;"></p>
+                </div> -->
+            </label>
+        </form>
+    </div>
+    
+    <script>
+        let n1 = document.getElementById('num1');
+        let n2 = document.getElementById('num2');
+        let result = document.getElementById('result')
+        const btn = document.getElementById('btn')
+        const resetBtn = document.getElementById('resetBtn')
+
+        result.innerHTML = '0'
+        function division(num1, num2) {
+            let Result = parseFloat((num1 / num2).toFixed(4))
+                result.innerHTML = Result
+        }
+        function getValue() {
+            let n1V = n1.value;
+            let n2V = n2.value;
+            console.log(n1V);
+            division(n1V, n2V);
+            event.preventDefault()
+        }
+        function reset() {
+            result.innerHTML = '0'
+        }
+        btn.addEventListener('click', getValue)
+        resetBtn.addEventListener('click', reset)
+
+    </script>
+</body>
+
+</html>

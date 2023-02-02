@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>無名小站｜珮珮的窩</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300&family=Zen+Maru+Gothic:wght@400;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="margin: 0;">
+    <!-- <nav style="background-color: bisque;">
+        <div style="display: block;margin: 0 auto;">
+            <ul style="margin: 0;">
+                <li><a style="text-decoration: none;" href="">BLOG</a></li>
+                <li><a style="text-decoration: none;" href="">BLOG</a></li>
+                <li><a style="text-decoration: none;" href="">BLOG</a></li>
+                <li><a style="text-decoration: none;" href="">BLOG</a></li>
+            </ul>
+        </div>
+    </nav> -->
+    <h1 class="title" id="title">新年快樂</h1>
+    <h2>珮珮的窩</h2>
+    <div class="block">
+    <img id="img" src="./images/IMG_8920.JPG" alt="新年快樂">
+        <h3>新年おめでとうございます</h3>
+    </div>
+    <div style="margin: 0 auto;text-align: center;display: block;">
+    <h4 style="display: inline-block;color: white;">選擇背景顏色：</h4>
+    <select id="bgColor" onChange="change()" >
+        <!-- onChange 一改變就啟動函式 -->
+        <option value="black">黑色</option>
+        <option value="#f18d00">橘色</option>
+        <option value="#667534">綠色</option>
+    </select>
+    <button style="display: block;margin: 0 auto;font-size: medium;padding: 10px;border-radius: 5px;background-color: white;border: 0;cursor: pointer;"><a target="_blank" href="./ajax-xhr.html" style="text-decoration: none;color: black;">開啟新視窗</a></button>
+    
+</div>
+    <script>
+        const bgColor = document.getElementById('bgColor')
+        // 函數分配法
+        // function change() {
+        //     document.body.style.backgroundColor = bgColor.value
+        // }
+
+        // 物件分配法
+        document.getElementById('bgColor').addEventListener("change",function(){
+            document.body.style.backgroundColor = bgColor.value
+        })
+        document.addEventListener
+    </script>
+</body>
+
+</html>
